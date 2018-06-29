@@ -1,0 +1,1 @@
+<img src="<?= base_url("assets/images/".$data[0]['gambar']) ?>" >
