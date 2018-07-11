@@ -66,7 +66,7 @@ class Home extends CI_Controller
         if($cat == 'start')
         {
             $header['value'] = 4;
-            $data['show_graph'] = 0;
+            $data['show_graph'] = 1;
             $data['portal_list'] = $this->Home_Model->getPortalList();
             $data['year_list'] = $this->Research_Model->get_year();
             $this->load->view('header', $header);

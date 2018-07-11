@@ -1,7 +1,9 @@
 <?php if ($data) ?>
 <div class="row">
 				<div class="panel-body">
-					<table class="table table-bordered" border="1">
+					<h1 style="width: 100%; text-align: center;"><b>SISTEM REKOMENDASI OBJEK WISATA JAWA TIMUR</b></h1>
+					<h1 style="width: 100%; text-align: center;"><b>BERBASIS TEMPORAL SENTIMENT ANALYSIS</b></h1>
+					<table class="table table-bordered" border="1" align="center">
 						<thead>
 				        	<tr>
 				        	  <th>No.</th>
