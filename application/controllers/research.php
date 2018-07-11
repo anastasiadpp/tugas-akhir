@@ -252,7 +252,7 @@ class Research extends CI_Controller
         $toDate= strtotime($toDate);
         $limit = (int)$limit;
 
-        $sql = 'SELECT v.venue_id, v.venue, c.value, AVG(value) "Score", d.positive, d.negative, d.netral
+        $sql = 'SELECT v.venue_id, v.venue, c.value,(d.positive-d.negative)/(d.positive+d.negative+d.netral) AS score, d.positive, d.negative, d.netral
                 FROM (SELECT venue_id,
                     SUM(CASE WHEN value=1 THEN 1 ELSE 0 END) positive,
                     SUM(CASE WHEN value=0 THEN 1 ELSE 0 END) netral,
@@ -260,7 +260,7 @@ class Research extends CI_Controller
                 FROM comment
                 GROUP BY venue_id) d,
                 comment c INNER JOIN venue v on c.venue_id = v.venue_id where v.kategori_id = ?
-                and d.venue_id = c.venue_id and c.tanggal between ? and ? group by c.venue_id order by score desc limit ? ';
+                and d.venue_id = c.venue_id and c.tanggal between ? and ? group by c.venue_id order by score desc, d.positive DESC limit ? ';
         $results = $this->db->query($sql, array($category, $fromDate, $toDate, $limit))->result();
 
         $data = [];
@@ -271,7 +271,7 @@ class Research extends CI_Controller
             $tmp['negative'] = $result->negative;
             $tmp['netral'] = $result->netral;
             $tmp['value'] = $result->value;
-            $tmp['Score'] = $result->Score;
+            $tmp['score'] = round($result->score,3);
             $tmp['venue_id'] = $result->venue_id;
 
             array_push($data, $tmp);

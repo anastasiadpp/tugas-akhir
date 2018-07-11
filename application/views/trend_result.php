@@ -22,7 +22,7 @@
 					          	<td><?= $data['positive']; ?></td>
 					          	<td><?= $data['negative']; ?></td>
 					          	<td><?= $data['netral']; ?></td>
-					          	<td><?= $data['Score']; ?></td>
+					          	<td><?= $data['score']; ?></td>
 					          	<td><a href="komen/<?= $data['venue_id']; ?>"><button name="submit" value="Test" class="btn btn-bricky btn-md">
                                     Lihat Komentar</button></a></td>
                                 <td><a href="gambar/<?= $data['venue_id']; ?>"><button name="submit" value="Test" class="btn btn-bricky btn-md">
