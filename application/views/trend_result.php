@@ -6,6 +6,9 @@
 				        	<tr>
 				        	  <th>No.</th>
 				        	  <th>Venue</th>
+				        	  <th>Positif</th>
+				        	  <th>Negatif</th>
+				        	  <th>Netral</th>
 				        	  <th>Score</th>
 				        	  <th></th>
 				        	  <th></th>
@@ -16,6 +19,9 @@
 					        <tr>
 					          	<td><?= $i+1; ?></td>					          	
 					          	<td><?= $data['venue']; ?></td>
+					          	<td><?= $data['positive']; ?></td>
+					          	<td><?= $data['negative']; ?></td>
+					          	<td><?= $data['netral']; ?></td>
 					          	<td><?= $data['Score']; ?></td>
 					          	<td><a href="komen/<?= $data['venue_id']; ?>"><button name="submit" value="Test" class="btn btn-bricky btn-md">
                                     Lihat Komentar</button></a></td>

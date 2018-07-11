@@ -6,7 +6,7 @@
                 <div class="page-header">
                     <h3><b><i>Sistem Rekomendasi Objek Wisata Jawa Timur Berbasis Temporal Sentiment Analysis</i></b></h3>
                 </div>
-            </div>
+            </div> 
     </div>
         <?= form_open('research/trend_result'); ?>
 		<div class="row" style="margin-bottom: -40px;">

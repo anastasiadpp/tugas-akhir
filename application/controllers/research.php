@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+   
 class Research extends CI_Controller 
 {
 	function __construct() 
@@ -252,21 +252,24 @@ class Research extends CI_Controller
         $toDate= strtotime($toDate);
         $limit = (int)$limit;
 
-        $sql = 'SELECT c.comment_id, v.venue_id, v.venue, c.value, AVG(value) "Score"
-                FROM comment c
-                INNER JOIN venue v
-                on c.venue_id = v.venue_id
-                where v.kategori_id = ? and c.tanggal between ? and ?
-                group by c.venue_id
-                order by score desc
-                limit ?';
+        $sql = 'SELECT v.venue_id, v.venue, c.value, AVG(value) "Score", d.positive, d.negative, d.netral
+                FROM (SELECT venue_id,
+                    SUM(CASE WHEN value=1 THEN 1 ELSE 0 END) positive,
+                    SUM(CASE WHEN value=0 THEN 1 ELSE 0 END) netral,
+                    SUM(CASE WHEN value=-1 THEN 1 ELSE 0 END) negative
+                FROM comment
+                GROUP BY venue_id) d,
+                comment c INNER JOIN venue v on c.venue_id = v.venue_id where v.kategori_id = ?
+                and d.venue_id = c.venue_id and c.tanggal between ? and ? group by c.venue_id order by score desc limit ? ';
         $results = $this->db->query($sql, array($category, $fromDate, $toDate, $limit))->result();
 
         $data = [];
 
         foreach ($results as $result) {
-            $tmp['comment_id'] = $result->comment_id;
             $tmp['venue'] = $result->venue;
+            $tmp['positive'] = $result->positive;
+            $tmp['negative'] = $result->negative;
+            $tmp['netral'] = $result->netral;
             $tmp['value'] = $result->value;
             $tmp['Score'] = $result->Score;
             $tmp['venue_id'] = $result->venue_id;
