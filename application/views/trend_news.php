@@ -21,10 +21,10 @@
                                             <h4><b>KATEGORI</b></h4>
                                         </label>
                                             <label class="radio-inline">
-                                                <input name="radioSentiment" type="radio" id="radioSentiment1" value="1" style="text-align: center;"> Alam
+                                                <input name="radioSentiment" type="radio" id="radioSentiment1" value="1" style="text-align: center;"> <b>Alam</b>
                                             </label>
                                             <label class="radio-inline">
-                                                <input name="radioSentiment" type="radio" id="radioSentiment2" value="2"> Buatan
+                                                <input name="radioSentiment" type="radio" id="radioSentiment2" value="2"> <b>Buatan</b>
                                             </label>
                                         </div>
                                     </div>
@@ -36,8 +36,8 @@
                                                 <b>JUMLAH</b>
                                             </h4>
                                         </label>                                                                                
-                                                <div class="col-md-5" style="margin-left: -1%;">  
-                                                    <select name="table_data_length" aria-controls="table_data" class=""><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="30">30</option></select> Rekomendasi
+                                                <div class="col-md-5" style="margin-left: 0%;">  
+                                                    <select name="table_data_length" aria-controls="table_data" class=""><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="30">30</option></select> <b>Rekomendasi</b>
                                                 </div>                                                                      
                                     </div>                            
                                 </br>
@@ -49,49 +49,27 @@
 
                                         <div style="margin-left: -10%;">
                                             <label class="radio-inline">
-                                                <p style="margin-left: -77%;">Dari Tanggal</p>
-                                            <div class="input-group" style="width: 150px;margin-left: -78%;">
+                                                <p style="margin-left: -70%;"><b>Dari Tanggal</b></p>
+                                            <div class="input-group" style="width: 150px;margin-left: -70%;">
                                                 <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
                                                 <input name="interval_date_from" type="text" class="form-control span2 datepicker" value="<?= date('D/M/Y'); ?>">
                                             </div>
                                             </label>
                                             <label class="radio-inline">
-                                                <p style="margin-left: -83%;">Sampai Tanggal</p>
+                                                <p style="margin-left: -83%;"><b>Sampai Tanggal</b></p>
                                                 <div class="input-group" style="width: 150px;margin-left: -83%;">
                                                     <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
                                                     <input name="interval_date_until" type="text" class="form-control span2 datepicker" value="<?= date('D/M/Y'); ?>">
                                                 </div>
                                             </label>
                                         </div>
-                                    </div>
-
-                                    <!-- <div class="form-group" style="margin-bottom: 0px;">
-                                        <label class="col-sm-2 control-label label-form" for="form-field-1" style="width : 75%; margin-right:-24.5%; text-align: center;">
-                                            <h4><b>KOMENTAR</b></h4>
-                                        </label>
-                                            <div style="display: inline-block;">
-                                                <div class="col-md-5">  
-                                                    Dari Tanggal
-                                                </div>
-                                                <div class="input-group" style="width: 150px;">
-                                                    <input name="interval_date_from" type="text" class="form-control span2 datepicker" value="<?= date('D/M/Y'); ?>">
-                                                    <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
-                                                </div>
-                                                <label class="control-label" style="padding-top: 3px">
-                                                    Sampai Tanggal
-                                                </label>
-                                                <div class="input-group" style="width: 150px;">
-                                                    <input name="interval_date_until" type="text" class="form-control span2 datepicker" value="<?= date('D/M/Y'); ?>">
-                                                    <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
-                                                </div>
-                                            </div>        
-                                    </div> -->
+                                    </div>                            
                                 </div>
                                 <div class="row" style="text-align: center;">
                                     <div class="col-md-9">
-                                        <div class="panel-body" style="margin-left: 33%;">
+                                        <div class="panel-body" style="margin-left: 40%;">
                                             <button type="submit" name="submit" value="Test" class="btn btn-bricky btn-md">
-                                               LIHAT REKOMENDASI
+                                               <b>LIHAT REKOMENDASI</b>
                                             </button>
                                         </div>
                                     </div>
